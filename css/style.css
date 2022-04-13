@@ -3,7 +3,8 @@
 --primary-text-color:#212121;
 --title-text-color:#757575;
 --accent-color:#2196F3;
---contact-footer-text-color: rgba(112, 38, 38, 0.6);
+
+--color-icon: #AFB1B8;
 --secondary-color: #FFFFFF;
 }
 
@@ -36,7 +37,7 @@ body{
 
 /* Линия Хедера*/
 .head{
-    border: 1px solid #ECECEC;
+    border-bottom: 1px solid #ECECEC;
 
 }
 
@@ -108,62 +109,63 @@ body{
 
 
 
-/*основной цвет contact*/
-.contact-items .item {
+/* Footer contact-items*/
+
+.contact-items{
+    display: flex;
+    margin-left:auto;
+    list-style: none;
+    padding: 0;
+    
+ }
+
+.contact-link {
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: center;
     color: var(--title-text-color);
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
-    margin: 0;
-    
+     margin: 0;
+     padding: 0;
+  
 }
 .icon-mail{
     width: 16px;
     height: 12px;
     margin-right: 10px;
-   fill: #757575;
-
+    fill: #757575;
 }
-.icon-mail:hover {
-   fill: #2196F3;
-}
-
-
 .icon-tel{
     width: 10px;
     height: 16px;
     margin-right: 10px;
     margin-left: 30px;
     fill: var(--title-text-color);
-}
-.icon-tel:hover {
-    fill: #2196F3;
+    fill: currentColor;
 }
 
-
-
-
-.contact-items{
-   display: flex;
-    list-style: none;
-    padding: 0;
-    margin-left:auto;
+/* HOVER and FOCUS contact-items*/
+.contact-link:hover,
+.contact-link:focus{
+    color: #2196F3;
+    cursor: pointer;
 }
-
-.contact-items .item:hover,
-.contact-items .item:focus{
-  color: #2196F3;
+.icon-mail{
+    fill: currentColor;
 }
+/*--------END----------*/
+
+
 
 
 /* Общий дисплей флекс*/
 .main-nav {
  display: flex;
  align-items: center;
-
-
 }
 
 /* Нero*/
@@ -180,8 +182,6 @@ body{
     margin-bottom: 30px;
     padding-top: 200px;
 
-  
-    
 }
 
 /*Hero потом убрать outline*/
@@ -245,30 +245,33 @@ body{
 
 
 /* footer aside*/
-.aside .item {
-    color: var(--title-text-color);
+.item-aside {
+    color: rgba(255, 255, 255, 0.6);
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.7;
     letter-spacing: 0.03em;
-    margin-top: 9px;
     text-decoration: none;
-   
+  
 }
+/*Отступы*/
+.desc:not(:last-child){
+    margin-bottom: 10px;
+}
+
 
 .aside{
+    
     list-style: none;
-  
-    padding: 0;
+     padding: 0;
      margin-top: 20px;
      margin-bottom: 0;
-   
-   
-}
+     
+ }
 
-.aside .item:hover,
-.aside .item:focus {
+.item-aside:hover,
+.item-aside:focus{
   color: #2196F3;
 }
 
@@ -291,21 +294,20 @@ body{
    
 }
 .icon-tab {
+    display: block;
     width: 44px;
     min-height: 44px;
-    
     margin-right: 10px;
-    padding-top: 10px;
+ 
     list-style: none;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
    
 }
-.icon-tab:hover,
-.icon-tab:focus {
-background-color: #2196F3;
-cursor: pointer;
-}
+
+
+
+
 .internet-links{
     padding:0;
     margin-top: 20px;
@@ -466,12 +468,12 @@ cursor: pointer;
 }
 /* "Эффект тени*/
 .desc-content{
-    box-shadow: 0px 2px 1px 0px #00000033;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+    0px 1px 1px rgba(0, 0, 0, 0.14), 
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
 
-  box-shadow: 0px 1px 1px 0px #00000024;
-
-  box-shadow: 0px 1px 3px 0px #0000001F;
-
+    
 }
 
 
@@ -515,12 +517,99 @@ cursor: pointer;
 }
 /*end icon footer*/
 
-/*Cоциальные иконки команды*/
+/*КНОПКА!!!Cоциальные иконки команды*/
+.team-social-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    background-color: #FFFFFF;
+}
+
+/* HOVER и FOCUS кнопок социальной сети*/
+.team-social-links:hover .team-instagram,
+.team-social-links:focus .team-instagram{
+    fill: #FFFFFF;      
+}
+.team-social-links:hover .team-twiter,
+.team-social-links:focus .team-twiter{
+    fill: #FFFFFF;      
+}
+.team-social-links:hover .team-facebook,
+.team-social-links:focus .team-facebook{
+    fill: #FFFFFF;      
+}
+.team-social-links:hover .team-linkedin,
+.team-social-links:focus .team-linkedin{
+    fill: #FFFFFF;      
+}
+.team-social-links:hover,
+.team-social-links:focus{
+    background-color: #2196F3;  
+}
+
+.social-links{
+    display: flex;
+    padding: 0;
+    margin-top: 16px;
+    text-align: center;
+  
+    justify-content: center;
+    list-style: none;
+ }
+ 
+ .icon{
+     display:flex;
+     width: 44px;
+     min-height: 44px;
+     margin:0;
+     
+     align-items: center;
+     list-style: none;
+     justify-content: center;
+     
+     border-radius: 50%;
+     
+ }
+ 
+ 
+ .icon:not(:last-child) {
+     margin-right: 10px;
+ }
+
+/* Кнопки Футера*/
+.button-icon-links{
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+}
+ .button-icon-links:hover,
+ .button-icon-links:focus{
+    background-color: #2196F3;
+    
+ }
+    
 .team-instagram{
     padding: 0;
     width: 20px;
     height: 20px;
     fill:#AFB1B8;
+   
 }
 .team-twiter{
     padding: 0;
@@ -543,53 +632,8 @@ cursor: pointer;
 }
 /*end social links icon*/
 
-/*Hover efect icon*/
-.team-instagram:hover{
-    fill:#FFFFFF;
-    
-}
-.team-twiter:hover{
-    fill:#FFFFFF;
-}
-.team-facebook:hover{
-    fill:#FFFFFF;
-}
-.team-linkedin:hover{
-    fill:#FFFFFF;
-}
-/*end hover*/
 
 
-.social-links{
-   display: flex;
-   padding: 0;
-   margin-top: 16px;
-   text-align: center;
- 
-   justify-content: center;
-   list-style: none;
- 
-
-}
-.icon{
-    display: inline-block;
-    width: 44px;
-    min-height: 44px;
-    margin:0;
-    padding-top: 10px;
-    list-style: none;
-    border-radius: 50%;
-}
-
-.icon:hover{
-background-color: #2196F3;
-cursor: pointer;
-
-}
-
-.icon:not(:last-child) {
-    margin-right: 10px;
-}
 
 
 
@@ -658,6 +702,8 @@ cursor: pointer;
   
 }
 
+
+
 /* Кнопка cтраницы WEB*/
 .btn{
    
@@ -679,11 +725,6 @@ cursor: pointer;
   
 }
 
-.btn:hover,
-.btn:focus{
- background-color: black;
- color: white;
-}
 
 
 
@@ -755,12 +796,16 @@ cursor: pointer;
     margin-left: -30px;
     margin-top: -30px;
 }
+
+
+
+
+
 .list:hover{
-    box-shadow: 1px 4px 6px 0px #00000029;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
+    0px 4px 4px rgba(0, 0, 0, 0.06),
+     1px 4px 6px rgba(0, 0, 0, 0.16);
 
-    box-shadow: 0px 4px 4px 0px #0000000F;
-
-    box-shadow: 0px 1px 1px 0px #0000001F;
     cursor: pointer;
 }
 
@@ -810,28 +855,50 @@ img {
     
 }
 
-
-
 /* Padding project*/
 .content-project {
  padding-top: 94px;
  padding-bottom: 94px;
 }
+
+
 /*Clisent-section*/
 .clients-top{
    display: flex;
     text-align: center;
-    width: 170px;
-    height: 92px;
-    border: 1px solid #AFB1B8;
     list-style: none;
-    background-size: contain;
    
 }
-.clients-top:hover,
-.clients-top:focus {
-    border: 1px solid #2196F3;
+/*КНОПКИ ПОСТОЯННЫЕ КЛИЕНТЫ*/
+.client-button{
+    display: flex;
+    width: 170px;
+    height: 92px;
+    padding: 0;
+    background-color: #FFFFFF;
+    border: none;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
 }
+/* hover и focus постоянные клиенты*/
+.client-button:hover .logo-1,
+.client-button:focus .logo-1{
+    fill: #2196F3;
+   
+}
+.client-button:hover{
+    border-color: #2196F3;
+}
+
+.logo-1{
+    width: 106px;
+    height: 60px;
+    padding: auto;
+    margin: auto;
+    fill: var(--color-icon);
+}
+
+
 
 .clients-top:not(:last-child){
     margin-right: 30px;
@@ -843,21 +910,15 @@ img {
     padding: 0;
     margin: 0;
 }
-.logo-1{
-    width: 106px;
-    height: 60px;
-    padding: auto;
-    margin: auto;
-    fill: #AFB1B8;
-}
-.logo-1:hover,
-.logo-1:focus {
-    fill: #2196F3;
-    cursor: pointer;
-    
-}
+
+
 
 .client{
+    padding-top: 94px;
     padding-bottom: 94px;
     
+}
+.icon-instagram:focus .team-instagram{
+ fill:#2196F3;
+
 }
